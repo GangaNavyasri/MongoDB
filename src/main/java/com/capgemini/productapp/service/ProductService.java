@@ -7,7 +7,6 @@ import com.capgemini.productapp.exceptions.ProductNotFoundException;
 
 public interface ProductService {
 
-	
 	public Product addProduct(Product product);
 
 	public Product updateProduct(Product product);
@@ -17,4 +16,6 @@ public interface ProductService {
 	public void deleteProduct(int productId);
 
 	public List<Product> findProductByCategory(String category);
+
+	public List<Product> findProductByName(String Name);
 }

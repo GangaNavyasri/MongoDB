@@ -47,4 +47,9 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.findProductByCategory(category);
 	}
 
+	@Override
+	public List<Product> findProductByName(String Name) {
+		return productRepository.findProductByName(Name);
+	}
+
 }

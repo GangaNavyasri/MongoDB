@@ -10,4 +10,7 @@ import com.capgemini.productapp.entity.Product;
 public interface ProductRepository  extends MongoRepository<Product, Integer>{
 	@Query("{'productCategory':?0}")
 public List<Product> findProductByCategory(String category);
+	
+	@Query("{'productName':?0}")
+	public List<Product> findProductByName(String Name);
 }
