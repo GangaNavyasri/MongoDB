@@ -1,5 +1,7 @@
 package com.capgemini.productapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.productapp.entity.Product;
@@ -64,4 +67,10 @@ public class ProductController {
 		return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
 	}
 
+	@GetMapping("/product/category")
+	public ResponseEntity<List<Product>> findProductByCategory(@RequestParam String category) {
+
+		return new ResponseEntity<List<Product>>(productService.findProductByCategory(category), HttpStatus.OK);
+
+	}
 }
